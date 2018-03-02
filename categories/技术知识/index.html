@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="小士咯">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/技术知识/index.html">
 <meta property="og:site_name" content="小士咯">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -115,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/categories/技术知识/"/>
 
 
 
 
 
-  <title>小士咯</title>
+  <title>分类: 技术知识 | 小士咯</title>
   
 
 
@@ -140,8 +140,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,176 +243,56 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block category">
+
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>技术知识<small>分类</small>
+        </h1>
+      </div>
+
       
-
-  
-
-  
-  
-  
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/introduce/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lzyxsl">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小士咯">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/02/27/introduce/" itemprop="url">
+              
+                <span itemprop="name">增强学习简介</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/27/introduce/" itemprop="url">增强学习简介</a></h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T20:50:24+08:00">
-                2018-02-27
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-27T20:50:24+08:00"
+              content="2018-02-27" >
+          02-27
+        </time>
+      </div>
 
-            
+    </header>
+  </article>
 
-            
-          </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术知识/" itemprop="url" rel="index">
-                    <span itemprop="name">技术知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>教材资料</p>
-<ul>
-<li>An Introduction to Reinforcement Learning, Sutton and Barto, 2014</li>
-<li>Algorithms for Reinforcement Learning, Szepesvari, 2010</li>
-</ul>
-<hr>
-<h1 id="增强学习的特性"><a href="#增强学习的特性" class="headerlink" title="增强学习的特性"></a>增强学习的特性</h1><ul>
-<li>没有监督者，只有奖励信号。</li>
-<li>反馈延迟，不是实时的。</li>
-<li>时间很关键。</li>
-<li>agent的行为会影响其后续接收的数据。</li>
-</ul>
-<h1 id="增强学习例子"><a href="#增强学习例子" class="headerlink" title="增强学习例子"></a>增强学习例子</h1><ul>
-<li>飞机特技表演训练。完成一个动作不会立刻得到反馈，只有完成一次表演才能知道好与不好。</li>
-<li>管理投资。</li>
-<li>控制发电站。对于不同情况，做出不同判断，最终高效率的进行发电。</li>
-</ul>
-<h1 id="RL问题"><a href="#RL问题" class="headerlink" title="RL问题"></a>RL问题</h1><p>奖励R是一个很重要的反馈信号，代表agent表现的如何，agent的目的就是最大化奖励。<br>例如：飞机特技做对了则+ve reward，损坏了则-ve reward；管理投资最后盈利的金额则为奖励。<br>为了长远的更大的奖励，当前的行为不一定是最佳的。比如管理投资，当前的投资行为可能造成亏损，但是需要考虑长期的效果。</p>
-<p>agent通过观察环境从而做出行为，环境通过行为反馈奖励给agent，并且行为将影响环境。这个过程行程一个循环，增强学习需要得到最大奖励。<br>History是一系列的观察、行为和奖励。通过history，agent选择action，environment选择observations/rewards。agent的每一次判断，不可能每次读取完整的history，因此引入state，是history的函数表示St = f(Ht)。</p>
-<p>环境状态：可以看做概括信息的数字集合，决定agent下一步采取的行动。环境状态并不都是对agent可见，agent看到的环境状态也可以是无关的信息。<br>agent状态：agent的内部呈现，决定下一步行为，RL算法的数据来源。<br>根据agent观察环境的角度可以分为两种：</p>
-<ul>
-<li>fully observable environments: agent state = environment state = information state,其实这就是一个Markov decision process(MDP)。</li>
-<li>partially observable environments: agent不是直接观察环境，agent state != environment state，称为partially observable Markov decision process(POMDP)。<br><img src="/2018/02/27/introduce/info_stat.png" alt="Markov State"></li>
-</ul>
-
-          
-        
       
     </div>
-    
-    
-    
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-  </section>
 
   
+
 
 
           </div>
