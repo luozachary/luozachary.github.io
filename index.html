@@ -187,6 +187,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -319,7 +339,11 @@
 </ul>
 <h1 id="RL问题"><a href="#RL问题" class="headerlink" title="RL问题"></a>RL问题</h1><p>奖励R是一个很重要的反馈信号，代表agent表现的如何，agent的目的就是最大化奖励。<br>例如：飞机特技做对了则+ve reward，损坏了则-ve reward；管理投资最后盈利的金额则为奖励。<br>为了长远的更大的奖励，当前的行为不一定是最佳的。比如管理投资，当前的投资行为可能造成亏损，但是需要考虑长期的效果。</p>
 <p>agent通过观察环境从而做出行为，环境通过行为反馈奖励给agent，并且行为将影响环境。这个过程行程一个循环，增强学习需要得到最大奖励。<br>History是一系列的观察、行为和奖励。通过history，agent选择action，environment选择observations/rewards。agent的每一次判断，不可能每次读取完整的history，因此引入state，是history的函数表示St = f(Ht)。</p>
-<p>环境状态：可以看做概括信息的数字集合，决定agent下一步采取的行动。环境状态并不都是对agent可见，agent看到的环境状态也可以是无关的信息。<br>agent状态：agent的内部呈现，决定下一步行为，RL算法的数据来源。<br><img src="/2018/02/27/introduce/info_stat.png" alt="Markov State"><br></p>
+<p>环境状态：可以看做概括信息的数字集合，决定agent下一步采取的行动。环境状态并不都是对agent可见，agent看到的环境状态也可以是无关的信息。<br>agent状态：agent的内部呈现，决定下一步行为，RL算法的数据来源。<br>根据agent观察环境的角度可以分为两种：</p>
+<ul>
+<li>fully observable environments: agent state = environment state = information state,其实这就是一个Markov decision process(MDP)。</li>
+<li>partially observable environments: agent不是直接观察环境，agent state != environment state，称为partially observable Markov decision process(POMDP)。<br><img src="/2018/02/27/introduce/info_stat.png" alt="Markov State"></li>
+</ul>
 
           
         
