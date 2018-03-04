@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/27/introduce/" itemprop="url">增强学习简介</a></h1>
+                <a class="post-title-link" href="/2018/02/27/introduce/" itemprop="url">强化学习简介</a></h1>
         
 
         <div class="post-meta">
@@ -358,19 +358,19 @@
 <li>Algorithms for Reinforcement Learning, Szepesvari, 2010</li>
 </ul>
 <hr>
-<h1 id="增强学习的特性"><a href="#增强学习的特性" class="headerlink" title="增强学习的特性"></a>增强学习的特性</h1><ul>
+<h1 id="强化学习的特性"><a href="#强化学习的特性" class="headerlink" title="强化学习的特性"></a>强化学习的特性</h1><ul>
 <li>没有监督者，只有奖励信号。</li>
 <li>反馈延迟，不是实时的。</li>
 <li>时间很关键。</li>
 <li>agent的行为会影响其后续接收的数据。</li>
 </ul>
-<h1 id="增强学习例子"><a href="#增强学习例子" class="headerlink" title="增强学习例子"></a>增强学习例子</h1><ul>
+<h1 id="强化学习例子"><a href="#强化学习例子" class="headerlink" title="强化学习例子"></a>强化学习例子</h1><ul>
 <li>飞机特技表演训练。完成一个动作不会立刻得到反馈，只有完成一次表演才能知道好与不好。</li>
 <li>管理投资。</li>
 <li>控制发电站。对于不同情况，做出不同判断，最终高效率的进行发电。</li>
 </ul>
 <h1 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h1><p>奖励R是一个很重要的反馈信号，代表agent表现的如何，agent的目的就是最大化奖励。<br>例如：飞机特技做对了则+ve reward，损坏了则-ve reward；管理投资最后盈利的金额则为奖励。<br>为了长远的更大的奖励，当前的行为不一定是最佳的。比如管理投资，当前的投资行为可能造成亏损，但是需要考虑长期的效果。</p>
-<p>agent通过观察环境从而做出行为，环境通过行为反馈奖励给agent，并且行为将影响环境。这个过程行程一个循环，增强学习需要得到最大奖励。<br>History是一系列的观察、行为和奖励。通过history，agent选择action，environment选择observations/rewards。agent的每一次判断，不可能每次读取完整的history，因此引入state，是history的函数表示St = f(Ht)。</p>
+<p>agent通过观察环境从而做出行为，环境通过行为反馈奖励给agent，并且行为将影响环境。这个过程行程一个循环，强化学习需要得到最大奖励。<br>History是一系列的观察、行为和奖励。通过history，agent选择action，environment选择observations/rewards。agent的每一次判断，不可能每次读取完整的history，因此引入state，是history的函数表示St = f(Ht)。</p>
 <p>环境状态：可以看做概括信息的数字集合，决定agent下一步采取的行动。环境状态并不都是对agent可见，agent看到的环境状态也可以是无关的信息。<br>agent状态：agent的内部呈现，决定下一步行为，RL算法的数据来源。<br>根据agent观察环境的角度可以分为两种：</p>
 <ul>
 <li>fully observable environments: agent state = environment state = information state,其实这就是一个Markov decision process(MDP)。</li>
