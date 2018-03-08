@@ -352,7 +352,19 @@
       
         
           
-            
+            <h1 id="Markov-Processes"><a href="#Markov-Processes" class="headerlink" title="Markov Processes"></a>Markov Processes</h1><p>由上一文章<a href="http://luozachary.com/2018/02/27/introduce/" target="_blank" rel="noopener">强化学习简介</a>中提到马尔科夫的必要条件，我们可以知道state拥有历史上所有的相关信息；且当state是已知的情况下，历史信息就可以抛弃。<br>马尔科夫过程就是一个随机的过程，比如一序列的拥有马尔科夫性质的随机状态S1, S2…<br><img src="/2018/03/04/markov-decision-processes/markov_process.png" alt=""></p>
+<h1 id="Markov-Reward-Process"><a href="#Markov-Reward-Process" class="headerlink" title="Markov Reward Process"></a>Markov Reward Process</h1><p>马尔科夫奖励过程是一个带有价值的马尔科夫链。<br><img src="/2018/03/04/markov-decision-processes/markov_reward_process.png" alt=""><br>最终获取最大奖励值为整个过程的目标，其中折扣因子表明对未来价值的重要性。折扣因子在[0,1]，折扣因子越小表示越在乎当下价值不关心未来价值。<br><img src="/2018/03/04/markov-decision-processes/reward.png" alt=""><br>MRP的状态价值方程v(s)将返回状态s的价值以及未来的价值，v(s) = E[Gt | St = s]。价值方程一定遵循贝尔曼方程，当前状态的value等于立刻价值加上折扣因子乘以下一状态的value。<br><img src="/2018/03/04/markov-decision-processes/bellman.png" alt=""></p>
+<h1 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h1><p>在MRP的基础上引入actions便是MDP。<br><img src="/2018/03/04/markov-decision-processes/markov_decision_process.png" alt=""><br>政策π是在给定的状态下行为的分布，π(a|s) = P[At=a | St=s]。</p>
+<ul>
+<li>政策决定了agent的行为。</li>
+<li>MDP的政策由当前的状态决定，而非历史。</li>
+</ul>
+<p>从所有的政策中得到最大价值的政策的方程便是最优化价值方程，最优价值方程指出MDP中最优的表现行为，当得到最优价值方程时MDP问题同时也被解决。<br>对于政策的比较，在任何状态下如果政策π的价值≥π’的价值，那么就可以定义π优于π’。对于任意的MDP都存在以下条件：</p>
+<ul>
+<li>存在至少一个π*优于或者等于其他任意π。</li>
+<li>所有的最佳政策会得到最佳价值方程和最佳行为价值方程。</li>
+</ul>
+
           
         
       
