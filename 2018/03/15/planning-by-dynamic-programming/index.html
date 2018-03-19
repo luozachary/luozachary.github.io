@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="强化学习," />
 
 
 
@@ -79,24 +79,18 @@
 
 
 
-<meta name="description" content="写在前面不同的学习算法及其不同参数可以产生不同的模型，因此涉及模型的选择问题，在这里有两个重要的指标：经验误差和过拟合。错误率(errorrate)，分类错误的样本数占样本总数的比例。如果在m个样本中有a个样本分类错误，则错误率E=a/m，相应的1-a/m称为精度(accuracy)，即精度=1-错误率。留出法、交叉验证法和自助法是几个常用的评估方法，这里就不做详细的介绍，下面重点探讨一下模型性能">
-<meta name="keywords" content="机器学习">
+<meta name="description" content="简介动态规划将一个复杂的问题切分成小问题，再将小问题的解决方法组合起来。当一个问题具有这两性质的时候，动态规划便是很好的解决方案：最佳结构，最佳解决方案可以分解成小问题；小问题会重复出现，解决方案可以重复使用。 政策评估">
+<meta name="keywords" content="强化学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模型性能评估">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/模型性能评估/index.html">
+<meta property="og:title" content="planning-by-dynamic-programming">
+<meta property="og:url" content="http://yoursite.com/2018/03/15/planning-by-dynamic-programming/index.html">
 <meta property="og:site_name" content="罗某半仙">
-<meta property="og:description" content="写在前面不同的学习算法及其不同参数可以产生不同的模型，因此涉及模型的选择问题，在这里有两个重要的指标：经验误差和过拟合。错误率(errorrate)，分类错误的样本数占样本总数的比例。如果在m个样本中有a个样本分类错误，则错误率E=a/m，相应的1-a/m称为精度(accuracy)，即精度=1-错误率。留出法、交叉验证法和自助法是几个常用的评估方法，这里就不做详细的介绍，下面重点探讨一下模型性能">
+<meta property="og:description" content="简介动态规划将一个复杂的问题切分成小问题，再将小问题的解决方法组合起来。当一个问题具有这两性质的时候，动态规划便是很好的解决方案：最佳结构，最佳解决方案可以分解成小问题；小问题会重复出现，解决方案可以重复使用。 政策评估">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?E%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%28f%28x_%7Bi%7D%29-y_%7Bi%7D%29%5E%7B2%7D">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?E%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%5Cprod%20%28f%28x_%7Bi%7D%29%5Cneq%20y_%7Bi%7D%29">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?acc%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%5Cprod%20%28f%28x_%7Bi%7D%29%3D%20y_%7Bi%7D%29">
-<meta property="og:image" content="http://yoursite.com/2018/03/14/模型性能评估/混淆矩阵.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/14/模型性能评估/pr.png">
-<meta property="og:updated_time" content="2018-03-14T07:33:04.654Z">
+<meta property="og:updated_time" content="2018-03-15T06:30:40.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模型性能评估">
-<meta name="twitter:description" content="写在前面不同的学习算法及其不同参数可以产生不同的模型，因此涉及模型的选择问题，在这里有两个重要的指标：经验误差和过拟合。错误率(errorrate)，分类错误的样本数占样本总数的比例。如果在m个样本中有a个样本分类错误，则错误率E=a/m，相应的1-a/m称为精度(accuracy)，即精度=1-错误率。留出法、交叉验证法和自助法是几个常用的评估方法，这里就不做详细的介绍，下面重点探讨一下模型性能">
-<meta name="twitter:image" content="https://latex.codecogs.com/gif.latex?E%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%28f%28x_%7Bi%7D%29-y_%7Bi%7D%29%5E%7B2%7D">
+<meta name="twitter:title" content="planning-by-dynamic-programming">
+<meta name="twitter:description" content="简介动态规划将一个复杂的问题切分成小问题，再将小问题的解决方法组合起来。当一个问题具有这两性质的时候，动态规划便是很好的解决方案：最佳结构，最佳解决方案可以分解成小问题；小问题会重复出现，解决方案可以重复使用。 政策评估">
 
 
 
@@ -126,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/14/模型性能评估/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/15/planning-by-dynamic-programming/"/>
 
 
 
 
 
-  <title>模型性能评估 | 罗某半仙</title>
+  <title>planning-by-dynamic-programming | 罗某半仙</title>
   
 
 
@@ -269,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/模型性能评估/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/planning-by-dynamic-programming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luozy">
@@ -286,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">模型性能评估</h1>
+          <h1 class="post-title" itemprop="name headline">planning-by-dynamic-programming</h1>
         
 
         <div class="post-meta">
@@ -298,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T10:01:49+08:00">
-                2018-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T13:57:18+08:00">
+                2018-03-15
               </time>
             
 
@@ -358,14 +352,8 @@
       
 
       
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>不同的学习算法及其不同参数可以产生不同的模型，因此涉及模型的选择问题，在这里有两个重要的指标：经验误差和过拟合。<br>错误率(errorrate)，分类错误的样本数占样本总数的比例。如果在m个样本中有a个样本分类错误，则错误率E=a/m，相应的1-a/m称为精度(accuracy)，即精度=1-错误率。<br>留出法、交叉验证法和自助法是几个常用的评估方法，这里就不做详细的介绍，下面重点探讨一下模型性能度量。</p>
-<h1 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h1><p>对于一些常见的度量名词，在刚开始接触的时候经常弄不明白，互相之间的意义也梳理不清楚。</p>
-<h3 id="回归任务"><a href="#回归任务" class="headerlink" title="回归任务"></a>回归任务</h3><p>给定样本数据集D，其中yi是实例xi的真实标记，而f(xi)为学习器预测结果。回归任务中最常用的性能度量是均方误差(mean squared error)<br><img src="https://latex.codecogs.com/gif.latex?E%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%28f%28x_%7Bi%7D%29-y_%7Bi%7D%29%5E%7B2%7D" alt=""></p>
-<h3 id="分类任务"><a href="#分类任务" class="headerlink" title="分类任务"></a>分类任务</h3><ol>
-<li>错误率与精度<br>对于样本例集D，分类错误率定义为：<br><img src="https://latex.codecogs.com/gif.latex?E%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%5Cprod%20%28f%28x_%7Bi%7D%29%5Cneq%20y_%7Bi%7D%29" alt=""><br>其中，∏函数为指示函数，返回true或false。<br>精度定义为：<br><img src="https://latex.codecogs.com/gif.latex?acc%28f%3BD%29%3D%5Cfrac%7B1%7D%7Bm%7D%5Csum_%7B1%7D%5E%7Bm%7D%5Cprod%20%28f%28x_%7Bi%7D%29%3D%20y_%7Bi%7D%29" alt=""></li>
-<li>查准率、查全率与F1<br>在介绍这些度量之前，先来看看混淆矩阵。<br><img src="/2018/03/14/模型性能评估/混淆矩阵.png" alt=""><br>查准率(precision)和查全率(recall)分别定义为：<br>P=TP/(TP+FP)<br>R=TP/(TP+FN)<br>查准率和查全率是一对矛盾的度量，一般来说，查准率高时，查全率往往偏低；反之亦然。在信息检索中，查准率就是检索出的信息有多少比例是用户感兴趣的；查全率就是用户感兴趣的信息有多少被检索出来。<br>可根据学习器的预测结果对样例进行排序，排在前面的是学习器认为最可能是正例的样本，排在最后的则是学习器认为最不可能是正例的样本。按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率，并以查准率为纵轴、查全率为横轴构造查准率-查全率曲线，简称P-R曲线。<br>P-R曲线是非单调、不平滑的。P-R曲线可用来评估学习器的优劣。若一个学习器的P-R曲线被另一个学习器的P-R曲线完全包住，则后者的性能优于前者。如果两个学习器的曲线发生交叉，则通过二者面积的大小来比较，面积大的表示查全率和查准率双高比较优秀，但不太容易计算曲线（不平滑）的面积，因此通过平衡点（Break-Even Point，简称BEP）来度量。BEP是坐标上查准率等于查全率时的点，平衡点值越大，学习器越优秀。<br><img src="/2018/03/14/模型性能评估/pr.png" alt=""><br>ERP过于简化，定义F1常量来比较学习器P-R曲线的性能：F1=2<em>P</em>R/P+R=2<em>TP/(样例总数+TP-TN)<br>不同的应用场合，对查全率和查准率的侧重不同，如在商品推荐中，为尽可能少打扰用户，希望推荐的内容却是用户所感兴趣的，查准率更重要；在逃犯信息检索中，希望尽可能少漏掉逃犯，此时查全率更重要。对查准率和查全率的不同偏好，可用F1度量的一般形式Fβ，定义为：Fβ=(1+β2)</em> P <em> R/((β2</em>P)+R)。<br>其中β&gt;0度量了查全率对查准率的相对重要性；β=1时就是标准的F1；β&gt;1时偏好查全率；β&lt;1时偏好查准率。</li>
-</ol>
-
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>动态规划将一个复杂的问题切分成小问题，再将小问题的解决方法组合起来。当一个问题具有这两性质的时候，动态规划便是很好的解决方案：最佳结构，最佳解决方案可以分解成小问题；小问题会重复出现，解决方案可以重复使用。</p>
+<h1 id="政策评估"><a href="#政策评估" class="headerlink" title="政策评估"></a>政策评估</h1>
       
     </div>
     
@@ -382,7 +370,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/强化学习/" rel="tag"># 强化学习</a>
           
         </div>
       
@@ -395,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/04/markov-decision-processes/" rel="next" title="马尔科夫决策过程">
-                <i class="fa fa-chevron-left"></i> 马尔科夫决策过程
+              <a href="/2018/03/14/模型性能评估/" rel="next" title="模型性能评估">
+                <i class="fa fa-chevron-left"></i> 模型性能评估
               </a>
             
           </div>
@@ -405,8 +393,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/15/planning-by-dynamic-programming/" rel="prev" title="planning-by-dynamic-programming">
-                planning-by-dynamic-programming <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/15/multi-arm-bandits/" rel="prev" title="multi-arm-bandits">
+                multi-arm-bandits <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#性能度量"><span class="nav-number">2.</span> <span class="nav-text">性能度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回归任务"><span class="nav-number">2.0.1.</span> <span class="nav-text">回归任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类任务"><span class="nav-number">2.0.2.</span> <span class="nav-text">分类任务</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#政策评估"><span class="nav-number">2.</span> <span class="nav-text">政策评估</span></a></li></ol></div>
             
 
           </div>

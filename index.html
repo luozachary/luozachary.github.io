@@ -259,6 +259,292 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/multi-arm-bandits/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luozy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗某半仙">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/multi-arm-bandits/" itemprop="url">multi-arm-bandits</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T14:31:17+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术知识/" itemprop="url" rel="index">
+                    <span itemprop="name">技术知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>区别强化学习和其他类型学习的最重要的特征是，它使用训练信息来评估所采取的行动，而不是通过正确的行动来指导。</p>
+<h1 id="K-armed-Bandit-Problem"><a href="#K-armed-Bandit-Problem" class="headerlink" title="K-armed Bandit Problem"></a>K-armed Bandit Problem</h1><p>你有k个不同的行为可以选择，每次选择后都会收到一个数值奖励，你的目标就是在一定的时间周期内最大化总奖励值，如1000此选择机会。这就是k-armed bandit problem。<br>我们可以预估行为将会获取的价值：<br><img src="/2018/03/15/multi-arm-bandits/action_value.png" alt=""><br>当分母为0时，我们定义一个默认值Q1(a)=0；当分母无限大的时候，Qt(a)将会聚合成q*(a)。因此根据我们的预估值，最简单的行为选择准则便是选择最大的估算行为奖励值。<br>这种贪心选择行为每次都利用现有的知识去最大化即刻奖励，并没有去探索(这也是著名的double e问题，exploit &amp; explore)。于是我们在大多数时候都是采用贪心选择，但是存在概率ε会在所有的行为中随机挑选一个行为。</p>
+<h1 id="行为价值"><a href="#行为价值" class="headerlink" title="行为价值"></a>行为价值</h1><p>我们令Ri表示在第i次选择之后接收到的该选择的奖励，Qn表示该行为在被选择了n-1次之后的预估价值，可以简单的写成Qn=(R1 + R2 + … + Rn-1)/(n-1)。这个计算方式需要存储所有的奖励记录，我们可以找到更有效的计算公式。<br><img src="/2018/03/15/multi-arm-bandits/Qn.png" alt=""><br>上面谈论的求平均的方法适合应用于固定的环境下，但是RL问题很多都是出于不稳定的环境下，因此需要引入一个步长因子来加重最近奖励的权重，Q(n+1) = Qn + α(Rn - Qn)，α∈(0, 1]。<br><img src="/2018/03/15/multi-arm-bandits/step-size-value.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/planning-by-dynamic-programming/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="luozy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗某半仙">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/planning-by-dynamic-programming/" itemprop="url">planning-by-dynamic-programming</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T13:57:18+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术知识/" itemprop="url" rel="index">
+                    <span itemprop="name">技术知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>动态规划将一个复杂的问题切分成小问题，再将小问题的解决方法组合起来。当一个问题具有这两性质的时候，动态规划便是很好的解决方案：最佳结构，最佳解决方案可以分解成小问题；小问题会重复出现，解决方案可以重复使用。</p>
+<h1 id="政策评估"><a href="#政策评估" class="headerlink" title="政策评估"></a>政策评估</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/模型性能评估/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -766,7 +1052,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -788,7 +1074,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
