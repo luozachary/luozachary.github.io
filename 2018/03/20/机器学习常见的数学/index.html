@@ -88,7 +88,7 @@
 <meta property="og:description" content="牛顿法对于函数y=x^2-5，若需要求得令y等于0的x，我们都知道答案是正负√5，但是√5这个数值具体是多少呢？这里我们就可以用牛顿法来求解。先选取一个在√5附近的一个值，比如2。经过点(2,f(2))的切线与y=0相交的点x0为下一个猜测值。然后再令经过点(x0,f(x0))的切线与y=0相交的点为下一恶搞猜测值。以此类推…切线为y-y0=m(x-x0)，令x1是交点，x1=x0-y0/m，即x">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/03/20/机器学习常见的数学/newtown.png">
-<meta property="og:updated_time" content="2018-03-21T06:15:41.902Z">
+<meta property="og:updated_time" content="2018-03-21T13:30:48.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习常见的数学">
 <meta name="twitter:description" content="牛顿法对于函数y=x^2-5，若需要求得令y等于0的x，我们都知道答案是正负√5，但是√5这个数值具体是多少呢？这里我们就可以用牛顿法来求解。先选取一个在√5附近的一个值，比如2。经过点(2,f(2))的切线与y=0相交的点x0为下一个猜测值。然后再令经过点(x0,f(x0))的切线与y=0相交的点为下一恶搞猜测值。以此类推…切线为y-y0=m(x-x0)，令x1是交点，x1=x0-y0/m，即x">
@@ -354,7 +354,12 @@
       
 
       
-        <h1 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h1><p>对于函数y=x^2-5，若需要求得令y等于0的x，我们都知道答案是正负√5，但是√5这个数值具体是多少呢？这里我们就可以用牛顿法来求解。<br>先选取一个在√5附近的一个值，比如2。经过点(2,f(2))的切线与y=0相交的点x0为下一个猜测值。然后再令经过点(x0,f(x0))的切线与y=0相交的点为下一恶搞猜测值。以此类推…<br><img src="/2018/03/20/机器学习常见的数学/newtown.png" alt=""><br>切线为y-y0=m(x-x0)，令x1是交点，x1=x0-y0/m，即x1=x0-f(x0)/f’(x0)。<br>牛顿法：Xn+1 = Xn - f(Xn)/f’(Xn)<br>在经过一步步的优化带入后，便越来越靠近√5。</p>
+        <h1 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h1><p>对于函数y=x^2-5，若需要求得令y等于0的x，我们都知道答案是正负√5，但是√5这个数值具体是多少呢？这里我们就可以用牛顿法来求解。<br>先选取一个在√5附近的一个值，比如2。经过点(2,f(2))的切线与y=0相交的点x0为下一个猜测值。然后再令经过点(x0,f(x0))的切线与y=0相交的点为下一恶搞猜测值。以此类推…<br><img src="/2018/03/20/机器学习常见的数学/newtown.png" alt=""><br>切线为y-y0=m(x-x0)，令x1是交点，x1=x0-y0/m，即x1=x0-f(x0)/f’(x0)。<br>牛顿法：Xn+1 = Xn - f(Xn)/f’(Xn)<br>在经过一步步的优化带入后，便越来越靠近√5。<br>牛顿法不适合的情况：</p>
+<ul>
+<li>第一次选取的猜测值离准确值太远。</li>
+<li>|f’(x)|不能太小，如果f’(x)=0那么就无法得到相交点。</li>
+<li>对于有多个导数为0的函数，猜测值可能循环变化。</li>
+</ul>
 
       
     </div>
@@ -385,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/19/有限马尔科夫决策过程/" rel="next" title="有限马尔科夫决策过程">
-                <i class="fa fa-chevron-left"></i> 有限马尔科夫决策过程
+              <a href="/2018/03/15/multi-arm-bandits/" rel="next" title="multi-arm-bandits">
+                <i class="fa fa-chevron-left"></i> multi-arm-bandits
               </a>
             
           </div>
@@ -394,6 +399,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/amao/" rel="prev" title="阿毛">
+                阿毛 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
