@@ -88,7 +88,7 @@
 <meta property="og:description" content="牛顿法对于函数y=x^2-5，若需要求得令y等于0的x，我们都知道答案是正负√5，但是√5这个数值具体是多少呢？这里我们就可以用牛顿法来求解。先选取一个在√5附近的一个值，比如2。经过点(2,f(2))的切线与y=0相交的点x0为下一个猜测值。然后再令经过点(x0,f(x0))的切线与y=0相交的点为下一恶搞猜测值。以此类推…切线为y-y0=m(x-x0)，令x1是交点，x1=x0-y0/m，即x">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/03/20/机器学习常见的数学/newtown.png">
-<meta property="og:updated_time" content="2018-03-21T13:30:48.370Z">
+<meta property="og:updated_time" content="2018-04-14T01:47:44.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习常见的数学">
 <meta name="twitter:description" content="牛顿法对于函数y=x^2-5，若需要求得令y等于0的x，我们都知道答案是正负√5，但是√5这个数值具体是多少呢？这里我们就可以用牛顿法来求解。先选取一个在√5附近的一个值，比如2。经过点(2,f(2))的切线与y=0相交的点x0为下一个猜测值。然后再令经过点(x0,f(x0))的切线与y=0相交的点为下一恶搞猜测值。以此类推…切线为y-y0=m(x-x0)，令x1是交点，x1=x0-y0/m，即x">
@@ -360,6 +360,7 @@
 <li>|f’(x)|不能太小，如果f’(x)=0那么就无法得到相交点。</li>
 <li>对于有多个导数为0的函数，猜测值可能循环变化。</li>
 </ul>
+<h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><p>最小二乘法是一种用来寻找拟合线性点分布的方法，特别的简单。假设这条线是y=ax+b，点为{(x0,y0), (x1,y1)…}。使得误差E = 1/n * (((ax0+b) - y0)^2 + ((ax1+b) - y1)^2 + …)最小。对其求导得到E函数的critical point，而这个点便是E的最小值。将点带入，从而得到a，b的值，求得最拟合的线。同理，可以将其用于二元函数，比如：y=ax^2。</p>
 
       
     </div>
@@ -399,6 +400,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/28/深度学习概论/" rel="prev" title="深度学习概论">
+                深度学习概论 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,7 +480,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -486,7 +491,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -497,7 +502,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -530,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#牛顿法"><span class="nav-number">1.</span> <span class="nav-text">牛顿法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#牛顿法"><span class="nav-number">1.</span> <span class="nav-text">牛顿法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最小二乘法"><span class="nav-number">2.</span> <span class="nav-text">最小二乘法</span></a></li></ol></div>
             
 
           </div>

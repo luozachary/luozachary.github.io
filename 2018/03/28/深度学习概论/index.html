@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="强化学习," />
+  <meta name="keywords" content="深度学习,deeplearning.ai," />
 
 
 
@@ -79,24 +79,23 @@
 
 
 
-<meta name="description" content="Markov Processes由上一文章强化学习简介中提到马尔科夫的必要条件，我们可以知道state拥有历史上所有的相关信息；且当state是已知的情况下，历史信息就可以抛弃。马尔科夫过程就是一个随机的过程，比如一序列的拥有马尔科夫性质的随机状态S1, S2… Markov Reward Process马尔科夫奖励过程是一个带有价值的马尔科夫链。最终获取最大奖励值为整个过程的目标，其中折扣因子表">
-<meta name="keywords" content="强化学习">
+<meta name="description" content="什么是神经网络以房价预测为例子，如果简单的看成线性回归(x=size of house, y=price)，则可以创建一个单神经元网络。对于复杂一些的神经网络，依旧是存在输入和输出，而中间的神经元称为隐藏单元。并且最为神奇的是，神经网络的节点从获取的特征中自行决定使用哪些特征。各类神经网络应用场景 为什么深度学习会兴起近20年收集数据的代价越来越低，积累了大量的数字数据。一些传统的学习算法(LR,">
+<meta name="keywords" content="深度学习,deeplearning.ai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="马尔科夫决策过程">
-<meta property="og:url" content="http://yoursite.com/2018/03/04/markov-decision-processes/index.html">
+<meta property="og:title" content="深度学习概论">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/深度学习概论/index.html">
 <meta property="og:site_name" content="罗某半仙">
-<meta property="og:description" content="Markov Processes由上一文章强化学习简介中提到马尔科夫的必要条件，我们可以知道state拥有历史上所有的相关信息；且当state是已知的情况下，历史信息就可以抛弃。马尔科夫过程就是一个随机的过程，比如一序列的拥有马尔科夫性质的随机状态S1, S2… Markov Reward Process马尔科夫奖励过程是一个带有价值的马尔科夫链。最终获取最大奖励值为整个过程的目标，其中折扣因子表">
+<meta property="og:description" content="什么是神经网络以房价预测为例子，如果简单的看成线性回归(x=size of house, y=price)，则可以创建一个单神经元网络。对于复杂一些的神经网络，依旧是存在输入和输出，而中间的神经元称为隐藏单元。并且最为神奇的是，神经网络的节点从获取的特征中自行决定使用哪些特征。各类神经网络应用场景 为什么深度学习会兴起近20年收集数据的代价越来越低，积累了大量的数字数据。一些传统的学习算法(LR,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/03/04/markov-decision-processes/markov_process.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/04/markov-decision-processes/markov_reward_process.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/04/markov-decision-processes/reward.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/04/markov-decision-processes/bellman.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/04/markov-decision-processes/markov_decision_process.png">
-<meta property="og:updated_time" content="2018-03-26T03:21:38.031Z">
+<meta property="og:image" content="http://yoursite.com/2018/03/28/深度学习概论/single-neural.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/28/深度学习概论/neural-network.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/28/深度学习概论/supervised-network.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/28/深度学习概论/deeplearning.png">
+<meta property="og:updated_time" content="2018-03-28T14:07:33.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="马尔科夫决策过程">
-<meta name="twitter:description" content="Markov Processes由上一文章强化学习简介中提到马尔科夫的必要条件，我们可以知道state拥有历史上所有的相关信息；且当state是已知的情况下，历史信息就可以抛弃。马尔科夫过程就是一个随机的过程，比如一序列的拥有马尔科夫性质的随机状态S1, S2… Markov Reward Process马尔科夫奖励过程是一个带有价值的马尔科夫链。最终获取最大奖励值为整个过程的目标，其中折扣因子表">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/04/markov-decision-processes/markov_process.png">
+<meta name="twitter:title" content="深度学习概论">
+<meta name="twitter:description" content="什么是神经网络以房价预测为例子，如果简单的看成线性回归(x=size of house, y=price)，则可以创建一个单神经元网络。对于复杂一些的神经网络，依旧是存在输入和输出，而中间的神经元称为隐藏单元。并且最为神奇的是，神经网络的节点从获取的特征中自行决定使用哪些特征。各类神经网络应用场景 为什么深度学习会兴起近20年收集数据的代价越来越低，积累了大量的数字数据。一些传统的学习算法(LR,">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/28/深度学习概论/single-neural.png">
 
 
 
@@ -126,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/04/markov-decision-processes/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/深度学习概论/"/>
 
 
 
 
 
-  <title>马尔科夫决策过程 | 罗某半仙</title>
+  <title>深度学习概论 | 罗某半仙</title>
   
 
 
@@ -269,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/markov-decision-processes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/深度学习概论/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="luozy">
@@ -286,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">马尔科夫决策过程</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习概论</h1>
         
 
         <div class="post-meta">
@@ -298,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T15:05:41+08:00">
-                2018-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T21:22:22+08:00">
+                2018-03-28
               </time>
             
 
@@ -321,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术知识/" itemprop="url" rel="index">
-                    <span itemprop="name">技术知识</span>
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
 
@@ -358,18 +357,8 @@
       
 
       
-        <h1 id="Markov-Processes"><a href="#Markov-Processes" class="headerlink" title="Markov Processes"></a>Markov Processes</h1><p>由上一文章<a href="http://luozachary.com/2018/02/27/introduce/" target="_blank" rel="noopener">强化学习简介</a>中提到马尔科夫的必要条件，我们可以知道state拥有历史上所有的相关信息；且当state是已知的情况下，历史信息就可以抛弃。<br>马尔科夫过程就是一个随机的过程，比如一序列的拥有马尔科夫性质的随机状态S1, S2…<br><img src="/2018/03/04/markov-decision-processes/markov_process.png" alt=""></p>
-<h1 id="Markov-Reward-Process"><a href="#Markov-Reward-Process" class="headerlink" title="Markov Reward Process"></a>Markov Reward Process</h1><p>马尔科夫奖励过程是一个带有价值的马尔科夫链。<br><img src="/2018/03/04/markov-decision-processes/markov_reward_process.png" alt=""><br>最终获取最大奖励值为整个过程的目标，其中折扣因子表明对未来价值的重要性。折扣因子在[0,1]，折扣因子越小表示越在乎当下价值不关心未来价值。<br><img src="/2018/03/04/markov-decision-processes/reward.png" alt=""><br>MRP的状态价值方程v(s)将返回状态s的价值以及未来的价值，v(s) = E[Gt | St = s]。价值方程一定遵循贝尔曼方程，当前状态的value等于立刻价值加上折扣因子乘以下一状态的value。<br><img src="/2018/03/04/markov-decision-processes/bellman.png" alt=""></p>
-<h1 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h1><p>在MRP的基础上引入actions便是MDP。<br><img src="/2018/03/04/markov-decision-processes/markov_decision_process.png" alt=""><br>政策π是在给定的状态下行为的分布，π(a|s) = P[At=a | St=s]。</p>
-<ul>
-<li>政策决定了agent的行为。</li>
-<li>MDP的政策由当前的状态决定，而非历史。</li>
-</ul>
-<p>从所有的政策中得到最大价值的政策的方程便是最优化价值方程，最优价值方程指出MDP中最优的表现行为，当得到最优价值方程时MDP问题同时也被解决。<br>对于政策的比较，在任何状态下如果政策π的价值≥π’的价值，那么就可以定义π优于π’。对于任意的MDP都存在以下条件：</p>
-<ul>
-<li>存在至少一个π*优于或者等于其他任意π。</li>
-<li>所有的最佳政策会得到最佳价值方程和最佳行为价值方程。</li>
-</ul>
+        <h1 id="什么是神经网络"><a href="#什么是神经网络" class="headerlink" title="什么是神经网络"></a>什么是神经网络</h1><p>以房价预测为例子，如果简单的看成线性回归(x=size of house, y=price)，则可以创建一个单神经元网络。<br><img src="/2018/03/28/深度学习概论/single-neural.png" alt=""><br>对于复杂一些的神经网络，依旧是存在输入和输出，而中间的神经元称为隐藏单元。并且最为神奇的是，神经网络的节点从获取的特征中自行决定使用哪些特征。<br><img src="/2018/03/28/深度学习概论/neural-network.png" alt=""><br>各类神经网络应用场景<br><img src="/2018/03/28/深度学习概论/supervised-network.png" alt=""></p>
+<h1 id="为什么深度学习会兴起"><a href="#为什么深度学习会兴起" class="headerlink" title="为什么深度学习会兴起"></a>为什么深度学习会兴起</h1><p>近20年收集数据的代价越来越低，积累了大量的数字数据。一些传统的学习算法(LR, SVM)一开始会随着数据量的增大效果也越来越好，但是当数据量达到一个阀值时，其效果将平稳。而大型神经网络却可以继续随着数据量的增大而表现的越好。<br><img src="/2018/03/28/深度学习概论/deeplearning.png" alt=""></p>
 
       
     </div>
@@ -387,7 +376,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/强化学习/" rel="tag"># 强化学习</a>
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+            <a href="/tags/deeplearning-ai/" rel="tag"># deeplearning.ai</a>
           
         </div>
       
@@ -400,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/27/introduce/" rel="next" title="强化学习简介">
-                <i class="fa fa-chevron-left"></i> 强化学习简介
+              <a href="/2018/03/20/机器学习常见的数学/" rel="next" title="机器学习常见的数学">
+                <i class="fa fa-chevron-left"></i> 机器学习常见的数学
               </a>
             
           </div>
@@ -410,8 +401,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/14/模型性能评估/" rel="prev" title="模型性能评估">
-                模型性能评估 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/29/户口迁出证办理流程/" rel="prev" title="户口迁出证办理流程">
+                户口迁出证办理流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -544,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markov-Processes"><span class="nav-number">1.</span> <span class="nav-text">Markov Processes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markov-Reward-Process"><span class="nav-number">2.</span> <span class="nav-text">Markov Reward Process</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markov-Decision-Process"><span class="nav-number">3.</span> <span class="nav-text">Markov Decision Process</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是神经网络"><span class="nav-number">1.</span> <span class="nav-text">什么是神经网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么深度学习会兴起"><span class="nav-number">2.</span> <span class="nav-text">为什么深度学习会兴起</span></a></li></ol></div>
             
 
           </div>
